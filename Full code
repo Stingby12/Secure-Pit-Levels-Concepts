@@ -1,0 +1,1067 @@
+
+title Secure [Pit level concepts]
+
+(a pushable rock gathers no moss)
+
+author Omen777 [For Toombler]
+homepage https://toombler.itch.io/
+
+background_color #132a13 (#1f2041)
+
+run_rules_on_level_start
+
+again_interval 0.4
+
+realtime_interval 0.1
+
+level_select
+level_select_lock
+level_select_solve_symbol ㅤ
+
+custom_font data:font/ttf;base64,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
+
+
+========
+OBJECTS
+========
+
+Background
+#31572c (#2f532a) #2e5229 (#365c31) #375d32 #315b2b
+02020
+10122
+02021
+22100
+12210
+
+
+Platform
+transparent #60a34d #5c994b #568f46 #4b8a42 #3f7338 #3b6935 #396334 #284a23   
+00000
+01010
+00000
+01010
+00000
+
+DestructibleWall
+#90a955
+.....
+.000.
+.0.0.
+.000.
+.....
+
+Crate0
+#ff9838 #ffb759 #ffc857 (Orange Yellow)
+00000
+0...0
+0...0
+0...0
+00000
+
+Crate1
+#fca33e #f7c058 #f9cc56
+00000
+0...0
+0...0
+0...0
+00000
+
+Crate2
+#faac42 #eec956 #f0d155
+00000
+0...0
+0...0
+0...0
+00000
+
+Crate3
+#f8b447 #e6d155 #e6d854
+00000
+0...0
+0...0
+0...0
+00000
+
+Crate4
+#f7bc4c #ddda53 #dbdf53
+00000
+0...0
+0...0
+0...0
+00000
+
+Crate5
+#f5c24e #ffc857 #d5e352 #dbdf53
+00000
+0...0
+0...0
+0...0
+00000
+
+Crate6
+#f4c852 #ffc857 #d5e352 #dbdf53
+00000
+0...0
+0...0
+0...0
+00000
+
+Crate7
+#f3cd54 #ffc857 #d5e352 #dbdf53
+00000
+0...0
+0...0
+0...0
+00000
+
+Crate8
+#f2d056 #d5e352 #dbdf53
+00000
+0...0
+0...0
+0...0
+00000
+
+(#d5e352 #ffc857)
+(#f2d056)
+
+CrateCannotBePushed
+transparent #d5e352 #ffc857 #d5e352 #cde352 #c8e352 orange
+00000
+0...0
+0...0
+0...0
+00000
+
+
+Wall
+#132a13
+
+WallCoversDone
+transparent
+
+WallCoverUp
+#9bba50 #2c757d
+00000
+.....
+.....
+.....
+.....
+
+WallCoverDown
+#9bba50 #2c757d
+.....
+.....
+.....
+.....
+00000
+
+WallCoverRight
+#9bba50 #2c757d
+....0
+....0
+....0
+....0
+....0
+
+WallCoverLeft
+#9bba50 #2c757d
+0....
+0....
+0....
+0....
+0....
+
+WallCoverUpRightCorner
+#9bba50 #2c757d
+....0
+.....
+.....
+.....
+.....
+
+WallCoverDownRightCorner
+#9bba50 #2c757d
+.....
+.....
+.....
+.....
+....0
+
+WallCoverUpLeftCorner
+#9bba50 #2c757d
+0....
+.....
+.....
+.....
+.....
+
+WallCoverDownLeftCorner
+#9bba50 #2c757d
+.....
+.....
+.....
+.....
+0....
+
+
+FillMarker
+black
+
+WinMarker
+transparent
+
+WonCrate
+#d5e352 (#d8e152) (#dcde53) (#dfdc53) (#d5e352) #132a13 (#c1cf4a #cbd94e #d5e352 #b1cc4e #d5e352 #9bba50 #90a955)
+00000
+01110
+01110
+01110
+00000
+
+WinTimer0
+transparent
+
+WinTimer1
+transparent
+
+WinTimer2
+transparent
+
+WinTimer3
+transparent
+
+WinTimer4
+transparent
+
+AnimTimer0
+transparent
+
+AnimTimer1
+transparent
+
+AnimTimer2
+transparent
+
+AnimTimer3
+transparent
+
+AnimTimer4
+transparent
+
+AnimTimer5
+transparent
+
+AnimTimer6
+transparent
+
+AnimTimer7
+transparent
+
+AnimTimer8
+transparent
+
+LastLevelMarker
+transparent
+
+LastLevelMarker2
+transparent
+
+MessageMarker
+transparent
+
+person60
+black
+
+Person0
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.544. 
+.213. 
+31255 
+.356. 
+.5.5. 
+ 
+Person1
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.434. 
+.213. 
+21356 
+.456. 
+.5.5. 
+ 
+Person2
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.433. 
+.113. 
+22356 
+.466. 
+.5.5. 
+ 
+Person3
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.433. 
+.113. 
+32356 
+.566. 
+.5.5. 
+ 
+Person4
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.333. 
+.112. 
+33455 
+.566. 
+.4.5. 
+ 
+Person5
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.323. 
+.112. 
+44455 
+.666. 
+.4.4. 
+ 
+Person6
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.322. 
+.212. 
+44555 
+.666. 
+.4.4. 
+ 
+Person7
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.222. 
+.222. 
+55555 
+.566. 
+.4.4. 
+ 
+Person8
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.212. 
+.322. 
+55555 
+.566. 
+.4.4. 
+ 
+Person9
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.212. 
+.432. 
+46655 
+.566. 
+.4.3. 
+ 
+Person10
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.321. 
+.432. 
+46655 
+.566. 
+.4.3. 
+ 
+Person11
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.321. 
+.542. 
+36664 
+.466. 
+.4.3. 
+ 
+Person12
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.421. 
+.553. 
+35764 
+.456. 
+.4.3. 
+ 
+Person13
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.431. 
+.553. 
+35764 
+.456. 
+.4.3. 
+ 
+Person14
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.442. 
+.564. 
+35764 
+.456. 
+.4.3. 
+ 
+Person15
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.442. 
+.464. 
+34664 
+.456. 
+.4.3. 
+ 
+Person16
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.453. 
+.465. 
+44674 
+.456. 
+.4.3. 
+ 
+Person17
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.354. 
+.365. 
+44674 
+.346. 
+.4.4. 
+ 
+Person18
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.254. 
+.366. 
+44575 
+.346. 
+.4.4. 
+ 
+Person19
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.245. 
+.356. 
+43575 
+.346. 
+.4.4. 
+ 
+Person20
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.335. 
+.356. 
+43575 
+.346. 
+.3.4. 
+ 
+Person21
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.335. 
+.346. 
+43476 
+.346. 
+.3.5. 
+ 
+Person22
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.434. 
+.446. 
+43476 
+.346. 
+.3.5. 
+ 
+Person23
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.534. 
+.435. 
+43466 
+.336. 
+.3.5. 
+ 
+Person24
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.533. 
+.435. 
+43367 
+.336. 
+.3.5. 
+ 
+Person25
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.543. 
+.434. 
+43367 
+.336. 
+.3.6. 
+ 
+Person26
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.443. 
+.334. 
+43357 
+.336. 
+.2.6. 
+ 
+Person27
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.443. 
+.333. 
+53357 
+.336. 
+.2.6. 
+ 
+Person28
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.344. 
+.333. 
+53246 
+.336. 
+.2.6. 
+ 
+Person29
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.344. 
+.433. 
+53246 
+.336. 
+.2.6. 
+ 
+Person30
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.345. 
+.433. 
+63235 
+.336. 
+.3.7. 
+ 
+Person31
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.345. 
+.433. 
+64234 
+.235. 
+.3.7. 
+ 
+Person32
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.334. 
+.433. 
+64224 
+.235. 
+.3.7. 
+ 
+Person33
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.334. 
+.533. 
+64223 
+.235. 
+.4.7. 
+ 
+Person34
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.434. 
+.533. 
+53223 
+.334. 
+.4.7. 
+ 
+Person35
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.443. 
+.543. 
+53222 
+.334. 
+.4.7. 
+ 
+Person36
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.443. 
+.543. 
+53222 
+.333. 
+.5.7. 
+ 
+Person37
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.543. 
+.643. 
+43223 
+.333. 
+.5.6. 
+ 
+Person38
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.544. 
+.644. 
+43223 
+.333. 
+.5.6. 
+ 
+Person39
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.654. 
+.654. 
+33223 
+.332. 
+.6.5. 
+ 
+Person40
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.654. 
+.554. 
+33223 
+.332. 
+.6.5. 
+ 
+Person41
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.754. 
+.554. 
+33224 
+.422. 
+.6.4. 
+ 
+Person42
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.764. 
+.554. 
+33234 
+.421. 
+.6.3. 
+ 
+Person43
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.764. 
+.455. 
+43234 
+.421. 
+.6.3. 
+ 
+Person44
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.664. 
+.455. 
+43234 
+.421. 
+.6.2. 
+ 
+Person45
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.665. 
+.455. 
+43234 
+.422. 
+.6.2. 
+ 
+Person46
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.565. 
+.455. 
+43234 
+.412. 
+.6.2. 
+ 
+Person47
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.565. 
+.345. 
+53245 
+.412. 
+.6.2. 
+ 
+Person48
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.466. 
+.345. 
+53245 
+.313. 
+.5.2. 
+ 
+Person49
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.466. 
+.345. 
+53245 
+.313. 
+.4.3. 
+ 
+Person50
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.456. 
+.345. 
+53245 
+.313. 
+.4.3. 
+ 
+Person51
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.456. 
+.335. 
+52245 
+.214. 
+.3.4. 
+ 
+Person52
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.446. 
+.335. 
+52245 
+.214. 
+.3.4. 
+ 
+Person53
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.446. 
+.335. 
+52255 
+.224. 
+.2.5. 
+ 
+Person54
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.545. 
+.335. 
+52255 
+.125. 
+.2.5. 
+ 
+Person55
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.545. 
+.325. 
+52255 
+.125. 
+.2.5. 
+ 
+Person56
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.545. 
+.325. 
+41255 
+.135. 
+.3.5. 
+ 
+Person57
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.544. 
+.324. 
+41255 
+.135. 
+.3.5. 
+ 
+Person58
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.544. 
+.324. 
+31255 
+.246. 
+.4.5. 
+ 
+Person59
+#31572C #416931 #507A36 #608C3A #709D3F #7FAF44 #8FC049 #9ED24D #AEE352  
+.544. 
+.224. 
+31255 
+.246. 
+.5.5. 
+
+
+=======
+LEGEND
+=======
+
+. = Background
+% = Platform
+D = DestructibleWall
+# = Wall
+P = person0 and AnimTimer8
+Q = person0 and Platform and AnimTimer8
+
+Crate = Crate0 or Crate1 or Crate2 or Crate3 or Crate4 or Crate5 or Crate6 or Crate7 or Crate8
+* = Crate8
+
+L = LastLevelMarker
+
+BlocksPlayer = Crate or WonCrate or Wall or DestructibleWall
+BlocksCrate = Crate or WonCrate or Wall or Platform  
+
+WallCover = WallCoverUp or WallCoverDown or WallCoverRight or WallCoverLeft or WallCoverUpRightCorner or WallCoverDownRightCorner or WallCoverUpLeftCorner or WallCoverDownLeftCorner
+
+WinTimer = WinTimer0 or WinTimer1 or WinTimer2 or WinTimer3 or WinTimer4
+
+AnimTimer = AnimTimer0 or AnimTimer1 or AnimTimer2 or AnimTimer3 or AnimTimer4 or AnimTimer5 or AnimTimer6 or AnimTimer7 or AnimTimer8
+AnimTimerNot8 = AnimTimer0 or AnimTimer1 or AnimTimer2 or AnimTimer3 or AnimTimer4 or AnimTimer5 or AnimTimer6 or AnimTimer7
+
+Person = Person0 or Person1 or Person2 or Person3 or Person4 or Person5 or Person6 or Person7 or Person8 or Person9 or Person10 or Person11 or Person12 or Person13 or Person14 or Person15 or Person16 or Person17 or Person18 or Person19 or Person20 or Person21 or Person22 or Person23 or Person24 or Person25 or Person26 or Person27 or Person28 or Person29 or Person30 or Person31 or Person32 or Person33 or Person34 or Person35 or Person36 or Person37 or Person38 or Person39 or Person40 or Person41 or Person42 or Person43 or Person44 or Person45 or Person46 or Person47 or Person48 or Person49 or Person50 or Person51 or Person52 or Person53 or Person54 or Person55 or Person56 or Person57 or Person58 or Person59 or Person60
+
+Player = Person
+
+=======
+SOUNDS
+=======
+
+Crate MOVE  5983507 (21792307) (36772507)
+Player MOVE 98574507 (54585507)
+
+DestructibleWall destroy 92328503
+
+WonCrate create 91410908 
+
+endlevel 34417108 (39825900) (30978708) (18575908) (17763700) (57685702) (37882503) (81161508)
+(LastLevelMarker2 create 34417108)
+
+
+================
+COLLISIONLAYERS
+================
+
+Background
+Platform, 
+Person, Wall, DestructibleWall, Crate, WonCrate
+CrateCannotBePushed
+WallCoversDone,
+WallCoverUp,
+WallCoverDown,
+WallCoverRight,
+WallCoverLeft,   
+WallCoverUpRightCorner,   
+WallCoverDownRightCorner,   
+WallCoverUpLeftCorner,   
+WallCoverDownLeftCorner,
+FillMarker
+WinMarker
+LastLevelMarker, LastLevelMarker2
+MessageMarker
+WinTimer
+AnimTimer
+
+======
+RULES
+======
+
+
+[ >  Player | Crate | no BlocksCrate ] -> [  >  Player | > Crate0 |  ] (push crate and reset crate animnation)
+([ > Crate | Platform ] -> [ Crate | Platform ]  )
+[ > Crate | DestructibleWall ] -> [ | ]
+
+late [ Player ] -> [ Player FillMarker ]
+late [ FillMarker | no BlocksPlayer ] -> [ FillMarker | FillMarker ]
+
+late [ CrateCannotBePushed ] -> []
+late [ Crate ] -> [ Crate CrateCannotBePushed ]
+late [ FillMarker | Crate CrateCannotBePushed | no BlocksCrate ] -> [ FillMarker | Crate | no BlocksCrate ]
+late [ FillMarker ] -> []
+
+late [ Player ] -> [ Player WinMarker ]
+late [ WinMarker ][ Crate no CrateCannotBePushed ] -> [][ Crate ]
+
+late [ WinMarker ][ Crate ] -> [ WinMarker ][ WonCrate ]
+
+
+[ LastLevelMarker2 ][ action player ][ WinMarker ] -> [ LastLevelMarker2 ][ action player ][] message ...
+[ LastLevelMarker ][ action player ][ WinMarker ] -> [ LastLevelMarker2 ][ action player ][] checkpoint message The End. Thanks for playing! 
+[ LastLevelMarker2 ][ WinMarker ] -> [ LastLevelMarker2 ][]
+
+[ action Player ][ WinMarker ] -> win
+
+
+
+(----------graphics----------)
+
+(player animations)
+[ AnimTimerNot8 ][ stationary player ][ Person59 ] -> [ AnimTimerNot8 ][ stationary player ][ Person60 ]
+[ AnimTimerNot8 ][ stationary player ][ Person58 ] -> [ AnimTimerNot8 ][ stationary player ][ Person59 ]
+[ AnimTimerNot8 ][ stationary player ][ Person57 ] -> [ AnimTimerNot8 ][ stationary player ][ Person58 ]
+[ AnimTimerNot8 ][ stationary player ][ Person56 ] -> [ AnimTimerNot8 ][ stationary player ][ Person57 ]
+[ AnimTimerNot8 ][ stationary player ][ Person55 ] -> [ AnimTimerNot8 ][ stationary player ][ Person56 ]
+[ AnimTimerNot8 ][ stationary player ][ Person54 ] -> [ AnimTimerNot8 ][ stationary player ][ Person55 ]
+[ AnimTimerNot8 ][ stationary player ][ Person53 ] -> [ AnimTimerNot8 ][ stationary player ][ Person54 ]
+[ AnimTimerNot8 ][ stationary player ][ Person52 ] -> [ AnimTimerNot8 ][ stationary player ][ Person53 ]
+[ AnimTimerNot8 ][ stationary player ][ Person51 ] -> [ AnimTimerNot8 ][ stationary player ][ Person52 ]
+[ AnimTimerNot8 ][ stationary player ][ Person50 ] -> [ AnimTimerNot8 ][ stationary player ][ Person51 ]
+[ AnimTimerNot8 ][ stationary player ][ Person49 ] -> [ AnimTimerNot8 ][ stationary player ][ Person50 ]
+[ AnimTimerNot8 ][ stationary player ][ Person48 ] -> [ AnimTimerNot8 ][ stationary player ][ Person49 ]
+[ AnimTimerNot8 ][ stationary player ][ Person47 ] -> [ AnimTimerNot8 ][ stationary player ][ Person48 ]
+[ AnimTimerNot8 ][ stationary player ][ Person46 ] -> [ AnimTimerNot8 ][ stationary player ][ Person47 ]
+[ AnimTimerNot8 ][ stationary player ][ Person45 ] -> [ AnimTimerNot8 ][ stationary player ][ Person46 ]
+[ AnimTimerNot8 ][ stationary player ][ Person44 ] -> [ AnimTimerNot8 ][ stationary player ][ Person45 ]
+[ AnimTimerNot8 ][ stationary player ][ Person43 ] -> [ AnimTimerNot8 ][ stationary player ][ Person44 ]
+[ AnimTimerNot8 ][ stationary player ][ Person42 ] -> [ AnimTimerNot8 ][ stationary player ][ Person43 ]
+[ AnimTimerNot8 ][ stationary player ][ Person41 ] -> [ AnimTimerNot8 ][ stationary player ][ Person42 ]
+[ AnimTimerNot8 ][ stationary player ][ Person40 ] -> [ AnimTimerNot8 ][ stationary player ][ Person41 ]
+[ AnimTimerNot8 ][ stationary player ][ Person39 ] -> [ AnimTimerNot8 ][ stationary player ][ Person40 ]
+[ AnimTimerNot8 ][ stationary player ][ Person38 ] -> [ AnimTimerNot8 ][ stationary player ][ Person39 ]
+[ AnimTimerNot8 ][ stationary player ][ Person37 ] -> [ AnimTimerNot8 ][ stationary player ][ Person38 ]
+[ AnimTimerNot8 ][ stationary player ][ Person36 ] -> [ AnimTimerNot8 ][ stationary player ][ Person37 ]
+[ AnimTimerNot8 ][ stationary player ][ Person35 ] -> [ AnimTimerNot8 ][ stationary player ][ Person36 ]
+[ AnimTimerNot8 ][ stationary player ][ Person34 ] -> [ AnimTimerNot8 ][ stationary player ][ Person35 ]
+[ AnimTimerNot8 ][ stationary player ][ Person33 ] -> [ AnimTimerNot8 ][ stationary player ][ Person34 ]
+[ AnimTimerNot8 ][ stationary player ][ Person32 ] -> [ AnimTimerNot8 ][ stationary player ][ Person33 ]
+[ AnimTimerNot8 ][ stationary player ][ Person31 ] -> [ AnimTimerNot8 ][ stationary player ][ Person32 ]
+[ AnimTimerNot8 ][ stationary player ][ Person30 ] -> [ AnimTimerNot8 ][ stationary player ][ Person31 ]
+[ AnimTimerNot8 ][ stationary player ][ Person29 ] -> [ AnimTimerNot8 ][ stationary player ][ Person30 ]
+[ AnimTimerNot8 ][ stationary player ][ Person28 ] -> [ AnimTimerNot8 ][ stationary player ][ Person29 ]
+[ AnimTimerNot8 ][ stationary player ][ Person27 ] -> [ AnimTimerNot8 ][ stationary player ][ Person28 ]
+[ AnimTimerNot8 ][ stationary player ][ Person26 ] -> [ AnimTimerNot8 ][ stationary player ][ Person27 ]
+[ AnimTimerNot8 ][ stationary player ][ Person25 ] -> [ AnimTimerNot8 ][ stationary player ][ Person26 ]
+[ AnimTimerNot8 ][ stationary player ][ Person24 ] -> [ AnimTimerNot8 ][ stationary player ][ Person25 ]
+[ AnimTimerNot8 ][ stationary player ][ Person23 ] -> [ AnimTimerNot8 ][ stationary player ][ Person24 ]
+[ AnimTimerNot8 ][ stationary player ][ Person22 ] -> [ AnimTimerNot8 ][ stationary player ][ Person23 ]
+[ AnimTimerNot8 ][ stationary player ][ Person21 ] -> [ AnimTimerNot8 ][ stationary player ][ Person22 ]
+[ AnimTimerNot8 ][ stationary player ][ Person20 ] -> [ AnimTimerNot8 ][ stationary player ][ Person21 ]
+[ AnimTimerNot8 ][ stationary player ][ Person19 ] -> [ AnimTimerNot8 ][ stationary player ][ Person20 ]
+[ AnimTimerNot8 ][ stationary player ][ Person18 ] -> [ AnimTimerNot8 ][ stationary player ][ Person19 ]
+[ AnimTimerNot8 ][ stationary player ][ Person17 ] -> [ AnimTimerNot8 ][ stationary player ][ Person18 ]
+[ AnimTimerNot8 ][ stationary player ][ Person16 ] -> [ AnimTimerNot8 ][ stationary player ][ Person17 ]
+[ AnimTimerNot8 ][ stationary player ][ Person15 ] -> [ AnimTimerNot8 ][ stationary player ][ Person16 ]
+[ AnimTimerNot8 ][ stationary player ][ Person14 ] -> [ AnimTimerNot8 ][ stationary player ][ Person15 ]
+[ AnimTimerNot8 ][ stationary player ][ Person13 ] -> [ AnimTimerNot8 ][ stationary player ][ Person14 ]
+[ AnimTimerNot8 ][ stationary player ][ Person12 ] -> [ AnimTimerNot8 ][ stationary player ][ Person13 ]
+[ AnimTimerNot8 ][ stationary player ][ Person11 ] -> [ AnimTimerNot8 ][ stationary player ][ Person12 ]
+[ AnimTimerNot8 ][ stationary player ][ Person10 ] -> [ AnimTimerNot8 ][ stationary player ][ Person11 ]
+[ AnimTimerNot8 ][ stationary player ][ Person9 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person10 ]
+[ AnimTimerNot8 ][ stationary player ][ Person8 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person9 ]
+[ AnimTimerNot8 ][ stationary player ][ Person7 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person8 ]
+[ AnimTimerNot8 ][ stationary player ][ Person6 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person7 ]
+[ AnimTimerNot8 ][ stationary player ][ Person5 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person6 ]
+[ AnimTimerNot8 ][ stationary player ][ Person4 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person5 ]
+[ AnimTimerNot8 ][ stationary player ][ Person3 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person4 ]
+[ AnimTimerNot8 ][ stationary player ][ Person2 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person3 ]
+[ AnimTimerNot8 ][ stationary player ][ Person1 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person2 ]
+[ AnimTimerNot8 ][ stationary player ][ Person0 ] ->  [ AnimTimerNot8 ][ stationary player ][ Person1 ]
+[ AnimTimerNot8 ][ stationary player ][ person60 ] -> [ AnimTimerNot8 ][ stationary player ][ person0 ] (person60 is never shown)
+
+(animation stopping when idle)
+[ stationary player ][ animtimer7 ] -> [ stationary player ][ animtimer8 ]
+[ stationary player ][ animtimer6 ] -> [ stationary player ][ animtimer7 ]
+[ stationary player ][ animtimer5 ] -> [ stationary player ][ animtimer6 ]
+[ stationary player ][ animtimer4 ] -> [ stationary player ][ animtimer5 ]
+[ stationary player ][ animtimer3 ] -> [ stationary player ][ animtimer4 ]
+[ stationary player ][ animtimer2 ] -> [ stationary player ][ animtimer3 ]
+[ stationary player ][ animtimer1 ] -> [ stationary player ][ animtimer2 ]
+[ stationary player ][ animtimer0 ] -> [ stationary player ][ animtimer1 ]
+[ moving Player ][ AnimTimer ] -> [ moving Player ][ AnimTimer0 ]
+
+
+(crate push colour change animation)
+[ stationary player ][ Crate7 ] -> [ stationary player ][ Crate8 ]
+[ stationary player ][ Crate6 ] -> [ stationary player ][ Crate7 ]
+[ stationary player ][ Crate5 ] -> [ stationary player ][ Crate6 ]
+[ stationary player ][ Crate4 ] -> [ stationary player ][ Crate5 ]
+[ stationary player ][ Crate3 ] -> [ stationary player ][ Crate4 ]
+[ stationary player ][ Crate2 ] -> [ stationary player ][ Crate3 ]
+[ stationary player ][ Crate1 ] -> [ stationary player ][ Crate2 ]
+[ stationary player ][ Crate0 ] -> [ stationary player ][ Crate1 ]
+
+
+(create side borders)
+late up [ Wall no WallCoversDone | no Wall ] -> [ Wall WallCoverUp | ]
+late down [ Wall no WallCoversDone | no Wall ] -> [ Wall WallCoverDown | ]
+late right [ Wall no WallCoversDone | no Wall ] -> [ Wall WallCoverRight | ]
+late left [ Wall no WallCoversDone | no Wall ] -> [ Wall WallCoverLeft | ]
+
+
+(create corners)
+late down [ Wall no WallCoversDone | ] -> [ Wall WallCoverDownRightCorner WallCoverDownLeftCorner | ] 
+late up [ Wall no WallCoversDone | ] -> [ Wall WallCoverUpRightCorner WallCoverUpLeftCorner | ]
+
+(remove extra corners)
+late up [ Wall WallCoverUpRightCorner no WallCoversDone | no WallCoverRight ] -> [ Wall | ] 
+late right [ Wall WallCoverUpRightCorner no WallCoversDone | no WallCoverUp ] -> [ Wall | ] 
+late down [ Wall WallCoverDownRightCorner no WallCoversDone | no WallCoverRight ] -> [ Wall | ] 
+late right [ Wall WallCoverDownRightCorner no WallCoversDone | no WallCoverDown ] -> [ Wall | ] 
+late up [ Wall WallCoverUpLeftCorner no WallCoversDone | no WallCoverLeft ] -> [ Wall | ]
+late left [ Wall WallCoverUpLeftCorner no WallCoversDone | no WallCoverUp ] -> [ Wall | ] 
+late down [ Wall WallCoverDownLeftCorner no WallCoversDone | no WallCoverLeft ] -> [ Wall | ] 
+late left [ Wall WallCoverDownLeftCorner no WallCoversDone | no WallCoverDown ] -> [ Wall | ] 
+
+(finish covering walls)
+late [ Wall no WallCoversDone ] -> [ Wall WallCoversDone] 
+
+(--------------------)
+
+(maybe should make a deductive level using full scope of mechanics?)
+
+(idea: holes which can destroy crates but which fill and open up new possibilities for crates to be moved?
+       More things you can interract with and make inert:
+       Powerup which gives you a temporary trail you can block yourself with?
+       Balloon thing that is pushed off wall if you walk into it, but is destroyed by crate? 
+)        
+
+==============
+WINCONDITIONS
+==============
+
+=======
+LEVELS
+=======
+
+section 1/6
+message Came up with 6 levels with the idea.
+message They would work great if you added a few rules so there must be at least one crate in the level.
+
+############
+#%%%%##....#
+#%...##....#
+#q.*.d%.*..#
+#%...##....#
+#%%%%##....#
+############
+
+section 2/6
+
+############
+#....##%%%%#
+#....##...%#
+#p.*.d%.*.%#
+#....##...%#
+#....##%%%%#
+############
+
+section 3/6
+
+#######
+###...#
+#%*.d.#
+#%#...#
+#q#...#
+#%*.d.#
+###...#
+#######
+
+section 4/6
+
+#########
+#%%%%%%%#
+#%*...*%#
+#%.d.d.%#
+#%.dpd.%#
+#%.ddd.%#
+#%*...*%#
+#%%%%%%%#
+#########
+
+section 5/6
+
+#################
+##%.....*.....%##
+#%%%%%%%%%%%%%%%#
+#.%...........%.#
+#.%...........%.#
+#.%..ddddddd..%.#
+#.%..d.....d..%.#
+#.%..d..*..d..%.#
+#*%..d.*p*.d..%*#
+#.%..d..*..d..%.#
+#.%..d.....d..%.#
+#.%..ddddddd..%.#
+#.%...........%.#
+#.%...........%.#
+#%%%%%%%%%%%%%%%#
+##%.....*.....%##
+#################
+
+section 6/6
+
+###########
+#d#%%%%%#d#
+##%%ddd%%##
+#%%*****%%#
+#%d*...*d%#
+#%d*.p.*d%#
+#%d*...*d%#
+#%d*...*d%#
+#%%*****%%#
+##%%ddd%%##
+#d#%%%%%#d#
+###########
+
+message That's pretty much it.
